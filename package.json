@@ -1,0 +1,19 @@
+{
+  "name": "phase-1-wk3-code-challenge",
+  "version": "1.0.0",
+  "description": "Flatdango",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aminahagi/phase-1-wk3-code-challenge.git"
+  },
+  "author": "Amina Hagi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aminahagi/phase-1-wk3-code-challenge/issues"
+  },
+  "homepage": "https://github.com/aminahagi/phase-1-wk3-code-challenge#readme"
+}
