@@ -10,6 +10,7 @@ This application was built with the following technologies:
 - HTML
 - CSS
 - JavaScript
+- [Bootstrap](https://getbootstsrap.com)
 
 ## Getting Started
 To get started, you need to do the following:
