@@ -1,0 +1,49 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+
+
+.btn{
+   font-family: inherit;
+   cursor: pointer;
+   outline: 0;
+   font-size: 1.05rem;
+}
+
+
+.container{
+   min-height: 100vh;
+}
+
+
+.movie-db{
+   margin-top: 2rem;
+}
+
+.movie-item{
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+   border-radius: 1rem;
+   -webkit-border-radius: 1rem;
+   -moz-border-radius: 1rem;
+   -ms-border-radius: 1rem;
+   -o-border-radius: 1rem;
+   overflow: hidden;
+   box-shadow: 0 4px 21px -12px rgba(243, 238, 238, 0.79);
+   margin: 2rem 0;
+}
+.movie-img img{
+   display: block;
+   width: 300px;
+   height:400px;
+}
+.movie-name{
+   padding: 1.5rem 0.5rem;
+}
+.movie-name h4{
+   font-size: 0.5rem;
+}
