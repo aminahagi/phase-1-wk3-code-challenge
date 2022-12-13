@@ -1,4 +1,6 @@
-const url= "http://localhost:3000"
+
+
+const url= "https://api.npoint.io/16d3837723ce1f36d03d/films/"
 let info = document.getElementById("append")
 let leftList = document.getElementById("list")
 
@@ -27,8 +29,8 @@ function allMovies({title,runtime, showtime, description,poster,tickets_sold,id}
                                     <p class="card-text">Runtime:  ${runtime}</p>
                                     <p class="card-text">Show Time:  ${showtime}</p>
                                     <p>Remaining tickets<p>
-                                    <p id="span">${tickets_sold}</p>
-                                    <button onclick="ticketSold(-1)" id="tickets${id}" 
+                                    <p id="span${id}">${tickets_sold}</p>
+                                    <button onclick="ticketSold(-1,${id})" id="tickets${id}" 
                                     type="button" class=" btn btn-success">Purchase ticket</button>
                                 </div>
                                 </div>
@@ -63,8 +65,8 @@ function movieList({title}) {
 movieList()
 
 
-function ticketSold(clicks){
-    const ticketSolds= document.getElementById("span")
+function ticketSold(clicks,id){
+    const ticketSolds= document.getElementById(`span${id}`)
     const totalTickets = parseInt(ticketSolds.innerText) + clicks
     ticketSolds.innerText = totalTickets
     

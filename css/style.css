@@ -2,8 +2,13 @@
    padding: 0;
    margin: 0;
    box-sizing: border-box;
+  
+
 }
 
+body{
+   background-color: black;
+}
 
 
 .btn{
@@ -16,6 +21,7 @@
 
 .container{
    min-height: 100vh;
+
 }
 
 
@@ -33,7 +39,7 @@
    -ms-border-radius: 1rem;
    -o-border-radius: 1rem;
    overflow: hidden;
-   box-shadow: 0 4px 21px -12px rgba(243, 238, 238, 0.79);
+   box-shadow: 0 4px 21px -12px white;
    margin: 2rem 0;
 }
 .movie-img img{
