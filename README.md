@@ -23,6 +23,11 @@ To get started, you need to do the following:
 
         npm install
 
+- Link for the deployment
+
+                https://aminahagi.github.io/phase-1-wk3-code-challenge/
+
+
 ## Author
 Amina Hagi
 
