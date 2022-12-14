@@ -1,78 +1,63 @@
-
-
-const url= "https://api.npoint.io/16d3837723ce1f36d03d/films/"
-let info = document.getElementById("append")
-let leftList = document.getElementById("list")
-
-
-fetch(`${url}`).then((response) => response.json())
-.then(json=>{json.map(data=>
-   {
-        info.append(allMovies(data))
-    })})
+function fetchFilms() {
+    fetch("https://api.npoint.io/ba70976d5586ac1943d8/films/")
+      .then((res) => res.json())
+      .then((data) => renderFilms(data));
+  }
+  function renderFilms(data) {
+    const div = document.getElementById('card');
+    const ul = document.getElementById('films');
     
-// printing movies to the DOM
- 
-function allMovies({title,runtime, showtime, description,poster,tickets_sold,id}) {
-  
-    let movies =document.createElement("container")
-   movies.innerHTML =`
-                        <div id="append" class="movie-db">
-                        
-                                <div class="movie-item ">
-                                <div class="movie-img">
-                                    <img src="${poster}" alt="poster">
-                                </div>
-                                <div class="movie-name">
-                                    <h5>${title}</h5>
-                                    <p><em>${description}/em></p>
-                                    <p class="card-text">Runtime:  ${runtime}</p>
-                                    <p class="card-text">Show Time:  ${showtime}</p>
-                                    <p>Remaining tickets<p>
-                                    <p id="span${id}">${tickets_sold}</p>
-                                    <button onclick="ticketSold(-1,${id})" id="tickets${id}" 
-                                    type="button" class=" btn btn-success">Purchase ticket</button>
-                                </div>
-                                </div>
-                                  
-                         </div>
-    `;
- 
+    data.forEach(movie => {
+      const li = document.createElement('li');
+      li.classList.add('pointer', 'bold-italic-text');
+      li.innerHTML = movie.title;
 
 
-    return movies
-}
-// creating list for movies and  printing it to the DOM
+      const filmCard = document.createElement("div");
+      filmCard.classList.add('film-card');
+      filmCard.innerHTML = `
+        <img src="${movie.poster}" height=500px width=300px/>
+        <h2 class="bold-text">${movie.title}</h2>
+        <p class="bold-text">${movie.description}</p>
+        <p><span class="highlight bold-text">Runtime: ${movie.runtime}</span></p>
+        <p><span class="highlight bold-text">Showtime: ${movie.showtime}</span></p>
+      `;
+      // create <p> element to display the number of available tickets
+      const tickets = document.createElement("p");
+      tickets.classList.add("bold-italic-text")
+      tickets.innerHTML = `Available tickets: ${(movie.capacity) - (movie.tickets_sold)}`;
+      // append  <p> 
+      filmCard.appendChild(tickets);
 
-fetch(`${url}`).then((response) => response.json())
-.then(json=>{json.map(data=>
-   {
-    list.append(movieList(data))
-    })})
+      
+      const btn = document.createElement("button");
+      btn.textContent = "Purchase ticket";
+      // Eventlistener to decrement the number of tickets when clicked
+      btn.addEventListener('click', () => {
+        //check if tickets are sold out then print alert
+        if (parseInt(tickets.innerText.split(': ')[1]) === 0) {
+          alert("Ticket Sold Out,Please wait for the next movie");
+        } else {
+          //decrement ticket 
+          tickets.innerText = `Available tickets: ${parseInt(tickets.innerText.split(': ')[1]) - 1}`;
+        }
+      });
+      filmCard.appendChild(btn);
 
-function movieList({title}) {
-    let list = document.createElement("p")
-   list.innerHTML =
-   `<ul class="list-group">
-                <li class="list-group-item mt-2">${title}</li>
-                
-              </ul>
+
+
+      li.addEventListener('click', () => {
+        div.innerText=""
+        div.appendChild(filmCard);
+         if (!filmCard.classList.contains('active')) {
+          filmCard.classList.add('active');  
+          div.appendChild(filmCard);
+
+        }
         
-    `;
-
-    return list
-}
-movieList()
-
-
-function ticketSold(clicks,id){
-    const ticketSolds= document.getElementById(`span${id}`)
-    const totalTickets = parseInt(ticketSolds.innerText) + clicks
-    ticketSolds.innerText = totalTickets
-    
-    if(totalTickets < 0){
-        ticketSolds.innerText = 0
-        alert("Tickets sold out, Please wait for the next movie")
-    }
-    return ticketSolds
-     }
+      
+      });
+      ul.appendChild(li);
+    });
+  }
+  fetchFilms();

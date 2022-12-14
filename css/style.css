@@ -1,55 +1,83 @@
-*{
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box;
-  
-
-}
-
 body{
-   background-color: black;
+   background: beige;
 }
 
 
-.btn{
-   font-family: inherit;
-   cursor: pointer;
-   outline: 0;
-   font-size: 1.05rem;
+h1 {
+   text-align: center;
+   color: black;
 }
 
-
-.container{
-   min-height: 100vh;
-
+div {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-
-.movie-db{
-   margin-top: 2rem;
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+    float: left;
+    width: 30%;
+    margin-right: 10%;
 }
 
-.movie-item{
-   display: flex;
-   justify-content: space-between;
-   flex-direction: row;
-   border-radius: 1rem;
-   -webkit-border-radius: 1rem;
-   -moz-border-radius: 1rem;
-   -ms-border-radius: 1rem;
-   -o-border-radius: 1rem;
-   overflow: hidden;
-   box-shadow: 0 4px 21px -12px white;
-   margin: 2rem 0;
+li {
+    cursor: pointer;
+    background-color: #5f7499; 
+    font-family: serif;
+    color: #eee583;
+    padding: 5px;
+    margin: 10px 0;
+    border-radius: 5px;
 }
-.movie-img img{
-   display: block;
-   width: 300px;
-   height:400px;
+
+li:hover {
+    background-color: #008b8b;
 }
-.movie-name{
-   padding: 1.5rem 0.5rem;
+
+.film-card {
+    display: none;
+    background-color: #eee583;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #7d2e2e;
+    margin: 10px;
+    float: right;
+    width: 655x;
+    height: 545px;
+    position: relative;
 }
-.movie-name h4{
-   font-size: 0.5rem;
+
+.active {
+    display: block;
+}
+
+img {
+    float: left;
+    margin: 5px;
+    border-radius: 10px;
+    height: 540px;
+    width: 450px;
+}
+
+button {
+    background-color: #011638;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right-bottom;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #008b8b;
 }
