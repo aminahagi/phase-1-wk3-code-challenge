@@ -23,7 +23,6 @@ To get started, you need to do the following:
 
         npm install
 
-
 ## Author
 Amina Hagi
 
