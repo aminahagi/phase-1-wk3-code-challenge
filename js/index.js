@@ -54,7 +54,6 @@ function fetchFilms() {
           div.appendChild(filmCard);
 
         }
-        
       
       });
       ul.appendChild(li);

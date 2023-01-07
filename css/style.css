@@ -1,11 +1,11 @@
 body{
-   background: beige;
+   background:#2582a7;
 }
 
 
 h1 {
    text-align: center;
-   color: black;
+   color: rgb(66, 165, 104);
 }
 
 div {
@@ -19,20 +19,20 @@ div {
 ul {
     list-style: none;
     margin: 0;
-    padding: 5px;
-    float: left;
+    padding: 10px;
+    float: right;
     width: 30%;
     margin-right: 10%;
 }
 
 li {
     cursor: pointer;
-    background-color: #5f7499; 
-    font-family: serif;
-    color: #eee583;
-    padding: 5px;
-    margin: 10px 0;
-    border-radius: 5px;
+    background-color: #c94773; 
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #24ace2;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
 }
 
 li:hover {
@@ -40,32 +40,32 @@ li:hover {
 }
 
 .film-card {
-    display: none;
-    background-color: #eee583;
+    display: flex;
+    background-color: #7ba6e2;
     padding: 5px;
     border-radius: 5px;
-    box-shadow: 0 0 10px #7d2e2e;
-    margin: 10px;
-    float: right;
-    width: 655x;
+    box-shadow: 0 0 10px #72fa23;
+    margin: 20px;
+    float: left;
+    width: 500px;
     height: 545px;
     position: relative;
 }
 
 .active {
-    display: block;
+    display: flex;
 }
 
 img {
-    float: left;
-    margin: 5px;
-    border-radius: 10px;
+    float: right;
+    margin: 10px;
+    border-radius: 20px;
     height: 540px;
     width: 450px;
 }
 
 button {
-    background-color: #011638;
+    background-color: #b242c6;
     color: #fff;
     border: none;
     padding: 5px 10px;
@@ -79,5 +79,5 @@ button {
 }
 
 button:hover {
-    background-color: #008b8b;
+    background-color: #42d1d1;
 }
